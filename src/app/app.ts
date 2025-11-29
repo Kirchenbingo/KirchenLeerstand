@@ -9,13 +9,19 @@ import {
 import {Validators} from '@angular/forms';
 import {bootstrapApplication} from '@angular/platform-browser';
 
+type AnliegendeNutzungenFormRaw = {
+   schule: boolean | null;
+   altenheim: boolean | null;
+   schwimmbad: boolean | null;
+   sportplatz: boolean | null;
+   gruenflaeche: boolean | null;
+};
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   imports:[ReactiveFormsModule]
 })
-
-
 export class App {
   utilizations: Array<{prio: number; strike: boolean; label: string}> = [];
   statistik = new FormGroup({
@@ -31,21 +37,11 @@ export class App {
     bausubstanz: new FormControl('', Validators.required)
   });
 
-
   constructor(){
     this.intializeUtilizationArray();
   }
 
-  type AnliegendeNutzungenFormRaw = {
-   schule: boolean | null;
-   altenheim: boolean | null;
-   schwimmbad: boolean | null;
-   sportplatz: boolean | null;
-   gruenflaeche: boolean | null;
-};
-
-
-  intializeUtilizationArray(){
+  intializeUtilizationArray(this: any){
     this.utilizations = [];
     this.utilizations.push({prio: 0, strike: false, label: "Turnhalle"});
     this.utilizations.push({prio: 0, strike: false, label: "Kletterhalle"});
@@ -100,7 +96,7 @@ export class App {
   }
 
 
-  calcUtilizations(){
+  calcUtilizations(this: any){
     this.intializeUtilizationArray();
     this.processFormative(this.statistik.value.formative);
     this.processAnliegendeNutzungen(this.statistik.getRawValue().anliegendeNutzungen);
@@ -109,7 +105,7 @@ export class App {
   
   }
 
-  processFormative(selection: string | null | undefined) {
+  processFormative(this: any, selection: string | null | undefined) {
     switch ( selection ) {
       case "cityFormative":
         this.changePrioOfUtilization("Kletterhalle", 2);
@@ -281,7 +277,7 @@ export class App {
     }
   }
 
-  processAnliegendeNutzungen(selection: AnliegendeNutzungenFormRaw) {
+  processAnliegendeNutzungen(this: any, selection: AnliegendeNutzungenFormRaw) {
     if(selection.schule){
       this.changePrioOfUtilization("Turnhalle", 1);
       this.changePrioOfUtilization("Jugendtreff", 1);
