@@ -1,12 +1,361 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {  
+  AbstractControl,
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule} from '@angular/forms';
+import {Validators} from '@angular/forms';
+import {bootstrapApplication} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports:[ReactiveFormsModule]
 })
+
+
 export class App {
-  protected readonly title = signal('KirchenLeerstand');
+  utilizations: Array<{prio: number; strike: boolean; label: string}> = [];
+  statistik = new FormGroup({
+    formative: new FormControl('', Validators.required),
+    anliegendeNutzungen: new FormGroup({
+      schule: new FormControl(false, Validators.required),
+      altenheim: new FormControl(false, Validators.required),
+      schwimmbad: new FormControl(false, Validators.required),
+      sportplatz: new FormControl(false, Validators.required),
+      gruenflaeche: new FormControl(false, Validators.required)
+    }),  
+    altersquotient: new FormControl('', Validators.required),
+    bausubstanz: new FormControl('', Validators.required)
+  });
+
+
+  constructor(){
+    this.intializeUtilizationArray();
+  }
+
+  type AnliegendeNutzungenFormRaw = {
+   schule: boolean | null;
+   altenheim: boolean | null;
+   schwimmbad: boolean | null;
+   sportplatz: boolean | null;
+   gruenflaeche: boolean | null;
+};
+
+
+  intializeUtilizationArray(){
+    this.utilizations = [];
+    this.utilizations.push({prio: 0, strike: false, label: "Turnhalle"});
+    this.utilizations.push({prio: 0, strike: false, label: "Kletterhalle"});
+    this.utilizations.push({prio: 0, strike: false, label: "Hallenbad"});
+    this.utilizations.push({prio: 0, strike: false, label: "Indoor-Spielplatz"});
+    this.utilizations.push({prio: 0, strike: false, label: "Tanzschule"});
+    this.utilizations.push({prio: 0, strike: false, label: "Musikschule"});
+    this.utilizations.push({prio: 0, strike: false, label: "Atelier- und Kreativraum"});
+    this.utilizations.push({prio: 0, strike: false, label: "Repaircafé"});
+    this.utilizations.push({prio: 0, strike: false, label: "Sozialcafé"});
+    this.utilizations.push({prio: 0, strike: false, label: "Jugendtreff"});
+    this.utilizations.push({prio: 0, strike: false, label: "Sozialhotel"});
+    this.utilizations.push({prio: 0, strike: false, label: "Alten-Service-Zentrum"});
+    this.utilizations.push({prio: 0, strike: false, label: "Gemeindezentrum"});
+    this.utilizations.push({prio: 0, strike: false, label: "Sozialkaufhaus"});
+    this.utilizations.push({prio: 0, strike: false, label: "Vereinszentrum"});
+    this.utilizations.push({prio: 0, strike: false, label: "Lern- und Leseort"});
+    this.utilizations.push({prio: 0, strike: false, label: "Bibliothek"});
+    this.utilizations.push({prio: 0, strike: false, label: "Nachbarschaftsrestaurant"});
+    this.utilizations.push({prio: 0, strike: false, label: "Veranstaltungsraum"});
+    this.utilizations.push({prio: 0, strike: false, label: "Co-Working-Space"});
+    this.utilizations.push({prio: 0, strike: false, label: "Offenes religiöses Zentrum"});
+    this.utilizations.push({prio: 0, strike: false, label: "Stadtpark"});
+    this.utilizations.push({prio: 0, strike: false, label: "Gemeinschaftsgarten"});
+    this.utilizations.push({prio: 0, strike: false, label: "Spielplatz"});
+    this.utilizations.push({prio: 0, strike: false, label: "Marktplatz"});
+    this.utilizations.push({prio: 0, strike: false, label: "Freibad"});
+    this.utilizations.push({prio: 0, strike: false, label: "Sportplatz"});
+    this.utilizations.push({prio: 0, strike: false, label: "Tennisplatz"});
+    this.utilizations.push({prio: 0, strike: false, label: "Wohngruppe Frauen und Alleinerziehende"});
+    this.utilizations.push({prio: 0, strike: false, label: "Wohngruppe Jugendliche"});
+    this.utilizations.push({prio: 0, strike: false, label: "Betreutes Wohnen"});
+    this.utilizations.push({prio: 0, strike: false, label: "Co-Housing Projekt"});
+    this.utilizations.push({prio: 0, strike: false, label: "Wohnungslosenunterkunft"});
+    this.utilizations.push({prio: 0, strike: false, label: "Geflüchtetenunterkunft"});
+    this.utilizations.push({prio: 0, strike: false, label: "Gemeinschaftliches Alterswohnen"});
+    this.utilizations.push({prio: 0, strike: false, label: "Kita"});
+    this.utilizations.push({prio: 0, strike: false, label: "Offenes Ganztagsangebot"});
+    this.utilizations.push({prio: 0, strike: false, label: "Universitätsgebäude"});
+    this.utilizations.push({prio: 0, strike: false, label: "Verwaltungsgebäude"});
+    this.utilizations.push({prio: 0, strike: false, label: "Erweiterungsbau Schule"});
+    this.utilizations.push({prio: 0, strike: false, label: "Erweiterungsbau Altenheim"});
+    this.utilizations.push({prio: 0, strike: false, label: "Volkshochschule"});
+    this.utilizations.push({prio: 0, strike: false, label: "Theater"});
+    this.utilizations.push({prio: 0, strike: false, label: "Konzertsaal"});
+    this.utilizations.push({prio: 0, strike: false, label: "Club"});
+    this.utilizations.push({prio: 0, strike: false, label: "Ausstellungsraum"});
+    this.utilizations.push({prio: 0, strike: false, label: "Kolumbarium"});
+    this.utilizations.push({prio: 0, strike: false, label: "Tafel"});
+    this.utilizations.push({prio: 0, strike: false, label: "Studierenden- und Azubi-Wohnheim"});
+    this.utilizations.push({prio: 0, strike: false, label: "Gesundheitskiosk"});
+  }
+
+
+  calcUtilizations(){
+    this.intializeUtilizationArray();
+    this.processFormative(this.statistik.value.formative);
+    this.processAnliegendeNutzungen(this.statistik.getRawValue().anliegendeNutzungen);
+    this.processAltersquotient(this.statistik.value.altersquotient);
+    this.processBausubstanz(this.statistik.value.bausubstanz);
+  
+  }
+
+  processFormative(selection: string | null | undefined) {
+    switch ( selection ) {
+      case "cityFormative":
+        this.changePrioOfUtilization("Kletterhalle", 2);
+        this.changePrioOfUtilization("Hallenbad", 2);
+        this.changePrioOfUtilization("Freibad", 2);
+        this.changePrioOfUtilization("Universitätsgebäude", 2);
+        this.changePrioOfUtilization("Volkshochschule", 2);
+        this.changePrioOfUtilization("Verwaltungsgebäude", 2);
+        this.changePrioOfUtilization("Offenes religiöses Zentrum", 2);
+        this.changePrioOfUtilization("Theater", 2);
+        this.changePrioOfUtilization("Konzertsaal", 2);
+        this.changePrioOfUtilization("Club", 2);
+        this.changePrioOfUtilization("Bibliothek", 2);
+        this.changePrioOfUtilization("Ausstellungsraum", 2);
+
+        this.strikeUtilization("Turnhalle");
+        this.strikeUtilization("Indoor-Spielplatz");
+        this.strikeUtilization("Atelier- und Kreativraum");
+        this.strikeUtilization("Sozialhotel");
+        this.strikeUtilization("Alten-Service-Zentrum");
+        this.strikeUtilization("Co-Working-Space");
+        this.strikeUtilization("Lern- und Leseort");
+        this.strikeUtilization("Spielplatz");
+        this.strikeUtilization("Sportplatz");
+        this.strikeUtilization("Tennisplatz");
+        this.strikeUtilization("Wohngruppe Frauen und Alleinerziehende");
+        this.strikeUtilization("Wohngruppe Jugendliche");
+        this.strikeUtilization("Co-Housing Projekt");
+        this.strikeUtilization("Betreutes Wohnen");
+        this.strikeUtilization("Wohnungslosenunterkunft");
+        this.strikeUtilization("Geflüchtetenunterkunft");
+        this.strikeUtilization("Gemeinschaftliches Alterswohnen");
+        this.strikeUtilization("Kita");
+        this.strikeUtilization("Offenes Ganztagsangebot");
+        this.strikeUtilization("Erweiterungsbau Schule");
+        this.strikeUtilization("Erweiterungsbau Altenheim");
+        this.strikeUtilization("Kolumbarium");
+        this.strikeUtilization("Tafel");
+        this.strikeUtilization("Studierenden- und Azubi-Wohnheim");
+        this.strikeUtilization("Repaircafé");
+        this.strikeUtilization("Sozialcafé");
+        this.strikeUtilization("Jugendtreff");
+        this.strikeUtilization("Nachbarschaftsrestaurant");
+        this.strikeUtilization("Gesundheitskiosk");
+
+        //and so on
+        break;
+      case "quaterFormative":        
+        this.changePrioOfUtilization("Indoor-Spielplatz", 1);
+        this.changePrioOfUtilization("Kletterhalle", 1);
+        this.changePrioOfUtilization("Hallenbad", 1);
+        this.changePrioOfUtilization("Tanzschule", 1);
+        this.changePrioOfUtilization("Musikschule", 1);
+        this.changePrioOfUtilization("Atelier- und Kreativraum", 1);
+        this.changePrioOfUtilization("Repaircafé", 1);
+        this.changePrioOfUtilization("Sozialcafé", 1);
+        this.changePrioOfUtilization("Jugendtreff", 1);
+        this.changePrioOfUtilization("Alten-Service-Zentrum", 1);
+        this.changePrioOfUtilization("Gemeindezentrum", 1);
+        this.changePrioOfUtilization("Sozialkaufhaus", 1);
+        this.changePrioOfUtilization("Vereinszentrum", 1);
+        this.changePrioOfUtilization("Lern- und Leseort", 1);
+        this.changePrioOfUtilization("Bibliothek", 1);
+        this.changePrioOfUtilization("Nachbarschaftsrestaurant", 1);
+        this.changePrioOfUtilization("Veranstaltungsraum", 1);
+        this.changePrioOfUtilization("Stadtpark", 1);
+        this.changePrioOfUtilization("Gemeinschaftsgarten", 1);
+        this.changePrioOfUtilization("Spielplatz", 1);
+        this.changePrioOfUtilization("Marktplatz", 1);
+        this.changePrioOfUtilization("Freibad", 1);
+        this.changePrioOfUtilization("Ausstellungsraum", 1);
+        this.changePrioOfUtilization("Kolumbarium", 1);
+        this.changePrioOfUtilization("Tafel", 1);
+
+
+        this.strikeUtilization("Wohngruppe Frauen und Alleinerziehende");
+        this.strikeUtilization("Wohngruppe Jugendliche");
+        this.strikeUtilization("Betreutes Wohnen");
+        this.strikeUtilization("Co-Housing Projekt");
+        this.strikeUtilization("Wohnungslosenunterkunft");
+        this.strikeUtilization("Geflüchtetenunterkunft");
+        this.strikeUtilization("Gemeinschaftliches Alterswohnen");
+        this.strikeUtilization("Studierenden- und Azubi-Wohnheim");
+
+        //and so on
+        break;
+      case "quaterCityFormative":
+        this.changePrioOfUtilization("Indoor-Spielplatz", 1);
+        this.changePrioOfUtilization("Turnhalle", 1);
+        this.changePrioOfUtilization("Kletterhalle", 1);
+        this.changePrioOfUtilization("Hallenbad", 1);
+        this.changePrioOfUtilization("Tanzschule", 1);
+        this.changePrioOfUtilization("Musikschule", 1);
+        this.changePrioOfUtilization("Atelier- und Kreativraum", 1);
+        this.changePrioOfUtilization("Repaircafé", 1);
+        this.changePrioOfUtilization("Sozialcafé", 1);
+        this.changePrioOfUtilization("Jugendtreff", 1);
+        this.changePrioOfUtilization("Alten-Service-Zentrum", 1);
+        this.changePrioOfUtilization("Gemeindezentrum", 1);
+        this.changePrioOfUtilization("Sozialkaufhaus", 1);
+        this.changePrioOfUtilization("Vereinszentrum", 1);
+        this.changePrioOfUtilization("Lern- und Leseort", 1);
+        this.changePrioOfUtilization("Bibliothek", 1);
+        this.changePrioOfUtilization("Nachbarschaftsrestaurant", 1);
+        this.changePrioOfUtilization("Veranstaltungsraum", 1);
+        this.changePrioOfUtilization("Stadtpark", 1);
+        this.changePrioOfUtilization("Gemeinschaftsgarten", 1);
+        this.changePrioOfUtilization("Spielplatz", 1);
+        this.changePrioOfUtilization("Marktplatz", 1);
+        this.changePrioOfUtilization("Freibad", 1);
+        this.changePrioOfUtilization("Universitätsgebäude", 1);
+        this.changePrioOfUtilization("Volkshochschule", 1);
+        this.changePrioOfUtilization("Verwaltungsgebäude", 1);
+        this.changePrioOfUtilization("Offenes religiöses Zentrum", 1);
+        this.changePrioOfUtilization("Theater", 1);
+        this.changePrioOfUtilization("Konzertsaal", 1);
+        this.changePrioOfUtilization("Club", 1);
+        this.changePrioOfUtilization("Ausstellungsraum", 1);
+        this.changePrioOfUtilization("Kolumbarium", 1);
+        this.changePrioOfUtilization("Tafel", 1);
+        this.changePrioOfUtilization("Gesundheitskiosk", 1);
+
+
+        this.strikeUtilization("Wohngruppe Frauen und Alleinerziehende");
+        this.strikeUtilization("Wohngruppe Jugendliche");
+        this.strikeUtilization("Co-Housing Projekt");
+        this.strikeUtilization("Wohnungslosenunterkunft");
+        this.strikeUtilization("Geflüchtetenunterkunft");
+        this.strikeUtilization("Gemeinschaftliches Alterswohnen");
+        this.strikeUtilization("Studierenden- und Azubi-Wohnheim");
+
+        //and so on
+        break;
+      case "notFormative":
+        this.changePrioOfUtilization("Wohngruppe Frauen und Alleinerziehende", 1);
+        this.changePrioOfUtilization("Wohngruppe Jugendliche", 1);
+        this.changePrioOfUtilization("Betreutes Wohnen", 1);
+        this.changePrioOfUtilization("Co-Housing Projekt", 1);
+        this.changePrioOfUtilization("Wohnungslosenunterkunft", 1);
+        this.changePrioOfUtilization("Geflüchtetenunterkunft", 1);
+        this.changePrioOfUtilization("Gemeinschaftliches Alterswohnen", 1);
+        this.changePrioOfUtilization("Studierenden- und Azubi-Wohnheim", 1);
+        this.changePrioOfUtilization("Erweiterungsbau Schule", 1);
+        this.changePrioOfUtilization("Erweiterungsbau Altenheim", 1);
+        this.changePrioOfUtilization("Kita", 1);
+        this.changePrioOfUtilization("Offenes Ganztagsangebot", 1);
+        this.changePrioOfUtilization("Turnhalle", 1);
+        this.changePrioOfUtilization("Sportplatz", 1);
+        this.changePrioOfUtilization("Tennisplatz", 1);
+        this.changePrioOfUtilization("Spielplatz", 1);
+        this.changePrioOfUtilization("Co-Working-Space", 1);
+
+
+        this.strikeUtilization("Kletterhalle");
+        this.strikeUtilization("Hallenbad");
+        this.strikeUtilization("Freibad");
+        this.strikeUtilization("Universitätsgebäude");
+        this.strikeUtilization("Volkshochschule");
+        this.strikeUtilization("Verwaltungsgebäude");
+        this.strikeUtilization("Offenes religiöses Zentrum");
+        this.strikeUtilization("Theater");
+        this.strikeUtilization("Konzertsaal");
+        this.strikeUtilization("Club");
+        this.strikeUtilization("Bibliothek");
+        this.strikeUtilization("Ausstellungsraum");
+        
+        //and so on
+        break;
+    }
+  }
+
+  processAnliegendeNutzungen(selection: AnliegendeNutzungenFormRaw) {
+    if(selection.schule){
+      this.changePrioOfUtilization("Turnhalle", 1);
+      this.changePrioOfUtilization("Jugendtreff", 1);
+      this.changePrioOfUtilization("Lern- und Leseort", 1);
+      this.changePrioOfUtilization("Tanzschule", 1);
+      this.changePrioOfUtilization("Musikschule", 1);
+      this.changePrioOfUtilization("Offenes Ganztagsangebot", 1);
+      this.changePrioOfUtilization("Erweiterungsbau Schule", 1);
+    } else{
+      this.strikeUtilization("Erweiterungsbau Schule");
+    }
+  }
+  processBausubstanz(selection: string | null | undefined) {
+    switch ( selection ) {
+      case "Gut":
+        this.changePrioOfUtilization("Turnhalle", 1);
+        this.changePrioOfUtilization("Jugendtreff", 1);
+        this.changePrioOfUtilization("Lern- und Leseort", 1);
+        this.changePrioOfUtilization("Tanzschule", 1);
+        this.changePrioOfUtilization("Musikschule", 1);
+        this.changePrioOfUtilization("Offenes Ganztagsangebot", 1);
+        this.changePrioOfUtilization("Erweiterungsbau Schule", 1);
+
+        this.strikeUtilization("Erweiterungsbau Altenheim");
+        //and so on
+        break;
+      case "Schlecht":        
+        this.changePrioOfUtilization("Alten-Service-Zentrum", 1);
+        this.changePrioOfUtilization("Gemeindezentrum", 1);
+        this.changePrioOfUtilization("Gemeinschaftsgarten", 1);
+        this.changePrioOfUtilization("Gemeinschaftliches Alterswohnen", 1);
+        this.changePrioOfUtilization("Erweiterungsbau Altenheim", 1);
+        this.changePrioOfUtilization("Kolumbarium", 1);
+
+        this.strikeUtilization("Erweiterungsbau Schule");
+        //and so on
+        break;
+      case "SehrSchlecht":
+        this.strikeUtilization("Erweiterungsbau Schule");
+        this.strikeUtilization("Erweiterungsbau Altenheim");
+        this.strikeUtilization("Hallenbad");
+        this.strikeUtilization("Freibad");
+      //and so on
+        break;
+    }
+  }
+
+  processAltersquotient(quotient: string | null | undefined){
+    let quotientNumber = Number(quotient);
+    if(quotientNumber >= 30){
+      this.changePrioOfUtilization("Indoor-Spielplatz", 1);
+      this.changePrioOfUtilization("Kletterhalle", 1);
+      this.changePrioOfUtilization("Hallenbad", 1);
+    }
+  }
+
+  changePrioOfUtilization(searchLabel: String, newPrio: number){
+    this.utilizations[this.findUsageIndex(searchLabel)] = {
+      prio: this.utilizations[this.findUsageIndex(searchLabel)].prio + newPrio,
+      strike: this.utilizations[this.findUsageIndex(searchLabel)].strike,
+      label: this.utilizations[this.findUsageIndex(searchLabel)].label
+    }
+  }
+
+  strikeUtilization(searchLabel: String){
+    this.utilizations[this.findUsageIndex(searchLabel)] = {
+      prio: this.utilizations[this.findUsageIndex(searchLabel)].prio,
+      strike: true,
+      label: this.utilizations[this.findUsageIndex(searchLabel)].label
+    }
+  }
+
+  findUsageIndex(searchLabel: String): number {
+    return this.utilizations.findIndex(i => i.label === searchLabel);
+  }
 }
+bootstrapApplication(App);
