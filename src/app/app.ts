@@ -33,8 +33,16 @@ export class App {
       sportplatz: new FormControl(false, Validators.required),
       gruenflaeche: new FormControl(false, Validators.required)
     }),  
+    entrance: new FormControl('', Validators.required),
+    type: new FormControl('', Validators.required),
+    protection: new FormControl('', Validators.required),
+    bausubstanz: new FormControl('', Validators.required),
     altersquotient: new FormControl('', Validators.required),
-    bausubstanz: new FormControl('', Validators.required)
+    jugendquotient: new FormControl('', Validators.required),
+    youngAdults: new FormControl('', Validators.required),
+    poverty: new FormControl('', Validators.required),
+    stability: new FormControl('', Validators.required),
+    migration: new FormControl('', Validators.required), 
   });
 
   constructor(){
@@ -77,6 +85,7 @@ export class App {
     this.utilizations.push({prio: 0, strike: false, label: "Co-Housing Projekt"});
     this.utilizations.push({prio: 0, strike: false, label: "Wohnungslosenunterkunft"});
     this.utilizations.push({prio: 0, strike: false, label: "Geflüchtetenunterkunft"});
+    this.utilizations.push({prio: 0, strike: false, label: "Mehrgenerationenwohnen"});
     this.utilizations.push({prio: 0, strike: false, label: "Gemeinschaftliches Alterswohnen"});
     this.utilizations.push({prio: 0, strike: false, label: "Kita"});
     this.utilizations.push({prio: 0, strike: false, label: "Offenes Ganztagsangebot"});
@@ -93,6 +102,22 @@ export class App {
     this.utilizations.push({prio: 0, strike: false, label: "Tafel"});
     this.utilizations.push({prio: 0, strike: false, label: "Studierenden- und Azubi-Wohnheim"});
     this.utilizations.push({prio: 0, strike: false, label: "Gesundheitskiosk"});
+    this.utilizations.push({prio: 0, strike: false, label: "Eissportfläche"});
+    this.utilizations.push({prio: 0, strike: false, label: "Amphitheater"});
+    this.utilizations.push({prio: 0, strike: false, label: "Recycling-Zentrum"});
+    this.utilizations.push({prio: 0, strike: false, label: "Handwerkshof"});
+    this.utilizations.push({prio: 0, strike: false, label: "Produktionshalle"});
+    this.utilizations.push({prio: 0, strike: false, label: "Großmarkthalle"});
+    this.utilizations.push({prio: 0, strike: false, label: "Lagerhalle"});
+    this.utilizations.push({prio: 0, strike: false, label: "Baumarkt"});
+    this.utilizations.push({prio: 0, strike: false, label: "Gartencenter"});
+    this.utilizations.push({prio: 0, strike: false, label: "Möbelhaus"});
+    this.utilizations.push({prio: 0, strike: false, label: "Rechenzentrum"});
+    this.utilizations.push({prio: 0, strike: false, label: "Storage Space"});
+    this.utilizations.push({prio: 0, strike: false, label: "Block-Heizkraftwerk"});
+    this.utilizations.push({prio: 0, strike: false, label: "Wärmepumpenstandort"});
+    this.utilizations.push({prio: 0, strike: false, label: "Batteriespeicher"});
+    this.utilizations.push({prio: 0, strike: false, label: "Mobility-Hub"});
   }
 
 
@@ -100,9 +125,16 @@ export class App {
     this.intializeUtilizationArray();
     this.processFormative(this.statistik.value.formative);
     this.processAnliegendeNutzungen(this.statistik.getRawValue().anliegendeNutzungen);
-    this.processAltersquotient(this.statistik.value.altersquotient);
+    this.processEingang(this.statistik.value.entrance);
+    this.processBautyp(this.statistik.value.type);
+    this.processDenkmalschutz(this.statistik.value.protection);
     this.processBausubstanz(this.statistik.value.bausubstanz);
-  
+    this.processAltersquotient(this.statistik.value.altersquotient);
+    this.processJugendquotient(this.statistik.value.jugendquotient);
+    this.processJungeErwachsene(this.statistik.value.youngAdults);
+    this.processArmutsquotient(this.statistik.value.poverty);
+    this.processNachbarschaft(this.statistik.value.stability);
+    this.processMigrationshintergrund(this.statistik.value.migration);
   }
 
   processFormative(this: any, selection: string | null | undefined) {
@@ -300,37 +332,192 @@ export class App {
     } else{
       this.strikeUtilization("Erweiterungsbau Altenheim");
     }
+
+    if(selection.schwimmbad){
+    } else{
+      this.strikeUtilization("Freibad");
+      this.strikeUtilization("Hallenbad");
+    }
+     
+    if(selection.gruenflaeche){
+      this.changePrioOfUtilization("Stadtpark", 1);
+      this.changePrioOfUtilization("Gemeinschaftsgarten", 1);
+      this.changePrioOfUtilization("Spielplatz", 1);
+      this.changePrioOfUtilization("Marktplatz", 1);
+      this.changePrioOfUtilization("Sportplatz", 1);
+      this.changePrioOfUtilization("Tennisplatz", 1);
+    } else{
+    }
+
+    if(selection.schwimmbad){
+    } else{
+      this.strikeUtilization("Sportplatz");
+      this.strikeUtilization("Tennisplatz");
+    }
   }
-  processBausubstanz(selection: string | null | undefined) {
+
+    processEingang(selection: string | null | undefined) {
+    switch ( selection ) {
+      case "ImWestwerk":
+        this.strikeUtilization("Stadtpark");
+        this.strikeUtilization("Gemeinschaftsgarten");
+        this.strikeUtilization("Spielplatz");
+        this.strikeUtilization("Marktplatz");
+        this.strikeUtilization("Freibad");
+        this.strikeUtilization("Sportplatz");
+        this.strikeUtilization("Tennisplatz");
+        //and so on
+        break;
+
+      case "Seitlich":        
+        this.changePrioOfUtilization("Stadtpark", 1);
+        this.changePrioOfUtilization("Gemeinschaftsgarten", 1);
+        this.changePrioOfUtilization("Spielplatz", 1);
+        this.changePrioOfUtilization("Marktplatz", 1);
+        this.changePrioOfUtilization("Freibad", 1);
+        this.changePrioOfUtilization("Sportplatz", 1);
+        this.changePrioOfUtilization("Tennisplatz", 1);
+        //and so on
+        break;
+    }
+  }
+      processBautyp(selection: string | null | undefined) {
+    switch ( selection ) {
+      case "Basilika":
+        this.strikeUtilization("Stadtpark");
+        this.strikeUtilization("Gemeinschaftsgarten");
+        this.strikeUtilization("Spielplatz");
+        this.strikeUtilization("Marktplatz");
+        this.strikeUtilization("Freibad");
+        this.strikeUtilization("Sportplatz");
+        this.strikeUtilization("Tennisplatz");
+        //and so on
+        break;
+
+      case "Hallenkirche":        
+        this.changePrioOfUtilization("Stadtpark", 1);
+        this.changePrioOfUtilization("Gemeinschaftsgarten", 1);
+        this.changePrioOfUtilization("Spielplatz", 1);
+        this.changePrioOfUtilization("Marktplatz", 1);
+        this.changePrioOfUtilization("Freibad", 1);
+        this.changePrioOfUtilization("Sportplatz", 1);
+        this.changePrioOfUtilization("Tennisplatz", 1);
+        //and so on
+        break;
+
+      case "Saalkirche":        
+        this.changePrioOfUtilization("Stadtpark", 1);
+        this.changePrioOfUtilization("Gemeinschaftsgarten", 1);
+        this.changePrioOfUtilization("Spielplatz", 1);
+        this.changePrioOfUtilization("Marktplatz", 1);
+        this.changePrioOfUtilization("Freibad", 1);
+        this.changePrioOfUtilization("Sportplatz", 1);
+        this.changePrioOfUtilization("Tennisplatz", 1);
+        //and so on
+        break;
+    }
+  }
+
+        processDenkmalschutz(selection: string | null | undefined) {
+    switch ( selection ) {
+      case "Ja":
+        this.strikeUtilization("Stadtpark");
+        this.strikeUtilization("Gemeinschaftsgarten");
+        this.strikeUtilization("Spielplatz");
+        this.strikeUtilization("Marktplatz");
+        this.strikeUtilization("Freibad");
+        this.strikeUtilization("Sportplatz");
+        this.strikeUtilization("Tennisplatz");
+        //and so on
+        break;
+
+      case "JaAussen":        
+        this.changePrioOfUtilization("Stadtpark", 1);
+        this.changePrioOfUtilization("Gemeinschaftsgarten", 1);
+        this.changePrioOfUtilization("Spielplatz", 1);
+        this.changePrioOfUtilization("Marktplatz", 1);
+        this.changePrioOfUtilization("Freibad", 1);
+        this.changePrioOfUtilization("Sportplatz", 1);
+        this.changePrioOfUtilization("Tennisplatz", 1);
+        //and so on
+        break;
+
+      case "Nein":        
+        this.changePrioOfUtilization("Stadtpark", 1);
+        this.changePrioOfUtilization("Gemeinschaftsgarten", 1);
+        this.changePrioOfUtilization("Spielplatz", 1);
+        this.changePrioOfUtilization("Marktplatz", 1);
+        this.changePrioOfUtilization("Freibad", 1);
+        this.changePrioOfUtilization("Sportplatz", 1);
+        this.changePrioOfUtilization("Tennisplatz", 1);
+        //and so on
+        break;
+    }
+  }
+
+
+   processBausubstanz(selection: string | null | undefined) {
     switch ( selection ) {
       case "Gut":
-        this.changePrioOfUtilization("Turnhalle", 1);
-        this.changePrioOfUtilization("Jugendtreff", 1);
-        this.changePrioOfUtilization("Lern- und Leseort", 1);
-        this.changePrioOfUtilization("Tanzschule", 1);
-        this.changePrioOfUtilization("Musikschule", 1);
-        this.changePrioOfUtilization("Offenes Ganztagsangebot", 1);
-        this.changePrioOfUtilization("Erweiterungsbau Schule", 1);
-
-        this.strikeUtilization("Erweiterungsbau Altenheim");
-        //and so on
-        break;
-      case "Schlecht":        
-        this.changePrioOfUtilization("Alten-Service-Zentrum", 1);
-        this.changePrioOfUtilization("Gemeindezentrum", 1);
-        this.changePrioOfUtilization("Gemeinschaftsgarten", 1);
-        this.changePrioOfUtilization("Gemeinschaftliches Alterswohnen", 1);
-        this.changePrioOfUtilization("Erweiterungsbau Altenheim", 1);
-        this.changePrioOfUtilization("Kolumbarium", 1);
-
-        this.strikeUtilization("Erweiterungsbau Schule");
-        //and so on
-        break;
-      case "SehrSchlecht":
-        this.strikeUtilization("Erweiterungsbau Schule");
-        this.strikeUtilization("Erweiterungsbau Altenheim");
-        this.strikeUtilization("Hallenbad");
+        this.strikeUtilization("Stadtpark");
+        this.strikeUtilization("Gemeinschaftsgarten");
+        this.strikeUtilization("Spielplatz");
+        this.strikeUtilization("Marktplatz");
         this.strikeUtilization("Freibad");
+        this.strikeUtilization("Sportplatz");
+        this.strikeUtilization("Tennisplatz");
+        //and so on
+        break;
+
+      case "Schlecht":        
+        this.changePrioOfUtilization("Stadtpark", 1);
+        this.changePrioOfUtilization("Gemeinschaftsgarten", 1);
+        this.changePrioOfUtilization("Spielplatz", 1);
+        this.changePrioOfUtilization("Marktplatz", 1);
+        this.changePrioOfUtilization("Freibad", 1);
+        this.changePrioOfUtilization("Sportplatz", 1);
+        this.changePrioOfUtilization("Tennisplatz", 1);
+        //and so on
+        break;
+
+      case "SehrSchlecht":
+        this.strikeUtilization("Turnhalle");
+        this.strikeUtilization("Hallenbad");
+        this.strikeUtilization("Indoor Spielplatz");
+        this.strikeUtilization("Tanzschule");
+        this.strikeUtilization("Musikschule");
+        this.strikeUtilization("Atelier- und Kreativraum");
+        this.strikeUtilization("Sozialcafé");
+        this.strikeUtilization("Repaircafé");
+        this.strikeUtilization("Jugendtreff");
+        this.strikeUtilization("Sozialhotel");
+        this.strikeUtilization("Alten-Service-Zentrum");
+        this.strikeUtilization("Gemeindezentrum");
+        this.strikeUtilization("Sozialkaufhaus");
+        this.strikeUtilization("Vereinszentrum");
+        this.strikeUtilization("Lern- und Leseort");
+        this.strikeUtilization("Bibliothek");
+        this.strikeUtilization("Nachbarschaftsrestaurant");
+        this.strikeUtilization("Veranstaltungsraum");
+        this.strikeUtilization("Co-Working-Space");
+        this.strikeUtilization("Wohngruppe Frauen und Alleinerziehende");
+        this.strikeUtilization("Wohngruppe Jugendliche");
+        this.strikeUtilization("Betreutes Wohnen");
+        this.strikeUtilization("Co-Housing Projekt");
+        this.strikeUtilization("Wohnungslosenunterkunft");
+        this.strikeUtilization("Geflüchtetenunterkunft");
+        this.strikeUtilization("Gemeinschaftliches Alterswohnen");
+        this.strikeUtilization("Offenes Ganztagsangebot");
+        this.strikeUtilization("Universitätsgebäude");
+        this.strikeUtilization("Verwaltungsgebäude");
+        this.strikeUtilization("Erweiterungsbau Schule");
+        this.strikeUtilization("Erweiterungsbau Altenheim");
+        this.strikeUtilization("Volkshochschule");
+        this.strikeUtilization("Konzertsaal");
+        this.strikeUtilization("Club");
+        this.strikeUtilization("Ausstellungsraum");
+        this.strikeUtilization("Tafel");
+        this.strikeUtilization("Studierenden- und Azubi-Wohnheim");
       //and so on
         break;
     }
@@ -345,6 +532,51 @@ export class App {
     }
   }
 
+  processJugendquotient(quotient: string | null | undefined){
+    let quotientNumber = Number(quotient);
+    if(quotientNumber >= 40){
+      this.changePrioOfUtilization("Indoor-Spielplatz", 1);
+      this.changePrioOfUtilization("Kletterhalle", 1);
+      this.changePrioOfUtilization("Hallenbad", 1);
+    }
+  }
+
+    processJungeErwachsene(quotient: string | null | undefined){
+    let quotientNumber = Number(quotient);
+    if(quotientNumber >= 15){
+      this.changePrioOfUtilization("Indoor-Spielplatz", 1);
+      this.changePrioOfUtilization("Kletterhalle", 1);
+      this.changePrioOfUtilization("Hallenbad", 1);
+    }
+  }
+
+  processArmutsquotient(quotient: string | null | undefined){
+    let quotientNumber = Number(quotient);
+    if(quotientNumber >= 20){
+      this.changePrioOfUtilization("Indoor-Spielplatz", 1);
+      this.changePrioOfUtilization("Kletterhalle", 1);
+      this.changePrioOfUtilization("Hallenbad", 1);
+    }
+  }
+
+  processNachbarschaft(quotient: string | null | undefined){
+    let quotientNumber = Number(quotient);
+    if(quotientNumber >= 30){
+      this.changePrioOfUtilization("Indoor-Spielplatz", 1);
+      this.changePrioOfUtilization("Kletterhalle", 1);
+      this.changePrioOfUtilization("Hallenbad", 1);
+    }
+  }
+
+    processMigrationshintergrund(quotient: string | null | undefined){
+    let quotientNumber = Number(quotient);
+    if(quotientNumber >= 40){
+      this.changePrioOfUtilization("Indoor-Spielplatz", 1);
+      this.changePrioOfUtilization("Kletterhalle", 1);
+      this.changePrioOfUtilization("Hallenbad", 1);
+    }
+  }
+  
   changePrioOfUtilization(searchLabel: String, newPrio: number){
     this.utilizations[this.findUsageIndex(searchLabel)] = {
       prio: this.utilizations[this.findUsageIndex(searchLabel)].prio + newPrio,
