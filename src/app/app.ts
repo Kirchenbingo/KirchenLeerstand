@@ -9,6 +9,7 @@ import {
 import {Validators} from '@angular/forms';
 import {bootstrapApplication} from '@angular/platform-browser';
 import { Utilizations } from './utilizations';
+import { Tags } from './tags';
 
 type AnliegendeNutzungenFormRaw = {
    schule: boolean | null;
@@ -24,7 +25,7 @@ type AnliegendeNutzungenFormRaw = {
   imports:[ReactiveFormsModule]
 })
 export class App {
-  utilizations: Array<{prio: number; strike: boolean; label: string}> = [];
+  utilizations: Array<{prio: number; strike: boolean; label: string; tags: Array<string>}> = [];
   statistik = new FormGroup({
     formative: new FormControl('', Validators.required),
     anliegendeNutzungen: new FormGroup({
@@ -52,73 +53,73 @@ export class App {
 
   intializeUtilizationArray(this: any){
     this.utilizations = [];
-    this.utilizations.push({prio: 0, strike: false, label: Utilizations.Turnhalle});
-    this.utilizations.push({prio: 0, strike: false, label: Utilizations.Kletterhalle});
-    this.utilizations.push({prio: 0, strike: false, label: "Hallenbad"});
-    this.utilizations.push({prio: 0, strike: false, label: "Indoor-Spielplatz"});
-    this.utilizations.push({prio: 0, strike: false, label: "Tanzschule"});
-    this.utilizations.push({prio: 0, strike: false, label: "Musikschule"});
-    this.utilizations.push({prio: 0, strike: false, label: "Atelier- und Kreativraum"});
-    this.utilizations.push({prio: 0, strike: false, label: "Repaircafé"});
-    this.utilizations.push({prio: 0, strike: false, label: "Sozialcafé"});
-    this.utilizations.push({prio: 0, strike: false, label: "Jugendtreff"});
-    this.utilizations.push({prio: 0, strike: false, label: "Sozialhotel"});
-    this.utilizations.push({prio: 0, strike: false, label: "Alten-Service-Zentrum"});
-    this.utilizations.push({prio: 0, strike: false, label: "Gemeindezentrum"});
-    this.utilizations.push({prio: 0, strike: false, label: "Sozialkaufhaus"});
-    this.utilizations.push({prio: 0, strike: false, label: "Vereinszentrum"});
-    this.utilizations.push({prio: 0, strike: false, label: "Lern- und Leseort"});
-    this.utilizations.push({prio: 0, strike: false, label: "Bibliothek"});
-    this.utilizations.push({prio: 0, strike: false, label: "Nachbarschaftsrestaurant"});
-    this.utilizations.push({prio: 0, strike: false, label: "Veranstaltungsraum"});
-    this.utilizations.push({prio: 0, strike: false, label: "Co-Working-Space"});
-    this.utilizations.push({prio: 0, strike: false, label: "Offenes religiöses Zentrum"});
-    this.utilizations.push({prio: 0, strike: false, label: "Stadtpark"});
-    this.utilizations.push({prio: 0, strike: false, label: "Gemeinschaftsgarten"});
-    this.utilizations.push({prio: 0, strike: false, label: "Spielplatz"});
-    this.utilizations.push({prio: 0, strike: false, label: "Marktplatz"});
-    this.utilizations.push({prio: 0, strike: false, label: "Freibad"});
-    this.utilizations.push({prio: 0, strike: false, label: "Sportplatz"});
-    this.utilizations.push({prio: 0, strike: false, label: "Tennisplatz"});
-    this.utilizations.push({prio: 0, strike: false, label: "Wohngruppe Frauen und Alleinerziehende"});
-    this.utilizations.push({prio: 0, strike: false, label: "Wohngruppe Jugendliche"});
-    this.utilizations.push({prio: 0, strike: false, label: "Betreutes Wohnen"});
-    this.utilizations.push({prio: 0, strike: false, label: "Co-Housing Projekt"});
-    this.utilizations.push({prio: 0, strike: false, label: "Wohnungslosenunterkunft"});
-    this.utilizations.push({prio: 0, strike: false, label: "Geflüchtetenunterkunft"});
-    this.utilizations.push({prio: 0, strike: false, label: "Mehrgenerationenwohnen"});
-    this.utilizations.push({prio: 0, strike: false, label: "Gemeinschaftliches Alterswohnen"});
-    this.utilizations.push({prio: 0, strike: false, label: "Kita"});
-    this.utilizations.push({prio: 0, strike: false, label: "Offenes Ganztagsangebot"});
-    this.utilizations.push({prio: 0, strike: false, label: "Universitätsgebäude"});
-    this.utilizations.push({prio: 0, strike: false, label: "Verwaltungsgebäude"});
-    this.utilizations.push({prio: 0, strike: false, label: "Erweiterungsbau Schule"});
-    this.utilizations.push({prio: 0, strike: false, label: "Erweiterungsbau Altenheim"});
-    this.utilizations.push({prio: 0, strike: false, label: "Volkshochschule"});
-    this.utilizations.push({prio: 0, strike: false, label: "Theater"});
-    this.utilizations.push({prio: 0, strike: false, label: "Konzertsaal"});
-    this.utilizations.push({prio: 0, strike: false, label: "Club"});
-    this.utilizations.push({prio: 0, strike: false, label: "Ausstellungsraum"});
-    this.utilizations.push({prio: 0, strike: false, label: "Kolumbarium"});
-    this.utilizations.push({prio: 0, strike: false, label: "Tafel"});
-    this.utilizations.push({prio: 0, strike: false, label: "Studierenden- und Azubi-Wohnheim"});
-    this.utilizations.push({prio: 0, strike: false, label: "Gesundheitskiosk"});
-    this.utilizations.push({prio: 0, strike: false, label: "Eissportfläche"});
-    this.utilizations.push({prio: 0, strike: false, label: "Amphitheater"});
-    this.utilizations.push({prio: 0, strike: false, label: "Recycling-Zentrum"});
-    this.utilizations.push({prio: 0, strike: false, label: "Handwerkshof"});
-    this.utilizations.push({prio: 0, strike: false, label: "Produktionshalle"});
-    this.utilizations.push({prio: 0, strike: false, label: "Großmarkthalle"});
-    this.utilizations.push({prio: 0, strike: false, label: "Lagerhalle"});
-    this.utilizations.push({prio: 0, strike: false, label: "Baumarkt"});
-    this.utilizations.push({prio: 0, strike: false, label: "Gartencenter"});
-    this.utilizations.push({prio: 0, strike: false, label: "Möbelhaus"});
-    this.utilizations.push({prio: 0, strike: false, label: "Rechenzentrum"});
-    this.utilizations.push({prio: 0, strike: false, label: "Storage Space"});
-    this.utilizations.push({prio: 0, strike: false, label: "Block-Heizkraftwerk"});
-    this.utilizations.push({prio: 0, strike: false, label: "Wärmepumpenstandort"});
-    this.utilizations.push({prio: 0, strike: false, label: "Batteriespeicher"});
-    this.utilizations.push({prio: 0, strike: false, label: "Mobility-Hub"});
+    this.utilizations.push({tags: [Tags.Innenraum], prio: 0, strike: false, label: Utilizations.Turnhalle});
+    this.utilizations.push({tags: [Tags.Innenraum, Tags.Aussenraum], prio: 0, strike: false, label: Utilizations.Kletterhalle});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Hallenbad"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Indoor-Spielplatz"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Tanzschule"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Musikschule"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Atelier- und Kreativraum"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Repaircafé"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Sozialcafé"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Jugendtreff"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Sozialhotel"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Alten-Service-Zentrum"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Gemeindezentrum"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Sozialkaufhaus"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Vereinszentrum"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Lern- und Leseort"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Bibliothek"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Nachbarschaftsrestaurant"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Veranstaltungsraum"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Co-Working-Space"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Offenes religiöses Zentrum"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Stadtpark"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Gemeinschaftsgarten"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Spielplatz"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Marktplatz"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Freibad"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Sportplatz"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Tennisplatz"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Wohngruppe Frauen und Alleinerziehende"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Wohngruppe Jugendliche"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Betreutes Wohnen"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Co-Housing Projekt"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Wohnungslosenunterkunft"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Geflüchtetenunterkunft"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Mehrgenerationenwohnen"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Gemeinschaftliches Alterswohnen"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Kita"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Offenes Ganztagsangebot"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Universitätsgebäude"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Verwaltungsgebäude"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Erweiterungsbau Schule"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Erweiterungsbau Altenheim"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Volkshochschule"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Theater"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Konzertsaal"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Club"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Ausstellungsraum"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Kolumbarium"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Tafel"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Studierenden- und Azubi-Wohnheim"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Gesundheitskiosk"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Eissportfläche"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Amphitheater"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Recycling-Zentrum"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Handwerkshof"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Produktionshalle"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Großmarkthalle"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Lagerhalle"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Baumarkt"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Gartencenter"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Möbelhaus"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Rechenzentrum"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Storage Space"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Block-Heizkraftwerk"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Wärmepumpenstandort"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Batteriespeicher"});
+    this.utilizations.push({tags: [], prio: 0, strike: false, label: "Mobility-Hub"});
   }
 
 
@@ -156,8 +157,9 @@ export class App {
         this.changePrioOfUtilization("Club", 2);
         this.changePrioOfUtilization("Bibliothek", 2);
         this.changePrioOfUtilization("Ausstellungsraum", 2);
+        this.strikeTag(Tags.Innenraum);
+        this.changePrioOfTag(Tags.Aussenraum, 25);
 
-        this.strikeUtilization(Utilizations.Turnhalle);
         this.strikeUtilization("Indoor-Spielplatz");
         this.strikeUtilization("Atelier- und Kreativraum");
         this.strikeUtilization("Sozialhotel");
@@ -618,7 +620,8 @@ export class App {
     this.utilizations[this.findUsageIndex(searchLabel)] = {
       prio: this.utilizations[this.findUsageIndex(searchLabel)].prio + newPrio,
       strike: this.utilizations[this.findUsageIndex(searchLabel)].strike,
-      label: this.utilizations[this.findUsageIndex(searchLabel)].label
+      label: this.utilizations[this.findUsageIndex(searchLabel)].label,
+      tags: this.utilizations[this.findUsageIndex(searchLabel)].tags
     }
   }
 
@@ -626,12 +629,31 @@ export class App {
     this.utilizations[this.findUsageIndex(searchLabel)] = {
       prio: this.utilizations[this.findUsageIndex(searchLabel)].prio,
       strike: true,
-      label: this.utilizations[this.findUsageIndex(searchLabel)].label
+      label: this.utilizations[this.findUsageIndex(searchLabel)].label,
+      tags: this.utilizations[this.findUsageIndex(searchLabel)].tags
     }
   }
 
   findUsageIndex(searchLabel: String): number {
     return this.utilizations.findIndex(i => i.label === searchLabel);
+  }
+
+  changePrioOfTag(tag: string, newPrio: number) {
+    this.utilizations.forEach((element,index) =>{
+      if(element.tags.includes(tag)){
+        element.prio += newPrio;
+        this.utilizations[index] = element
+      }
+    })
+  }
+
+    strikeTag(tag: string) {
+    this.utilizations.forEach((element,index) =>{
+      if(element.tags.includes(tag)){
+        element.strike = true;
+        this.utilizations[index] = element
+      }
+    })
   }
 
 }
