@@ -1,4 +1,25 @@
 export enum Tags {
     Innenraum = "Innenraum",
-    Aussenraum = "Außenraum"
+    Aussenraum = "Außenraum",
+    Repraesentativ = "Repräsentativ",
+    nichtRepraesentativ = "Nicht Repräsentativ",
+    ZielgruppeSenioren = "Zielgruppe Senioren",
+    ZielgruppeKinder = "Zielgruppe Kinder",
+    ZielgruppeJungeErwachsene = "Zielgruppe junge Erwachsene",
+    Eingeschossig = "Eingeschossig",
+    Mehrgeschossig = "Mehrgeschossig",
+    Stapelbar = "Stapelbar",
+    CashCow = "Cash Cow",
+    Rentabel = "Rentabel",
+    Finanzierungsbedarf = "Finanzierungsbedarf",
+    KulturelleEinrichtung = "Kulturelle Einrichtung",
+    Bildungseinrichtung = "Bildungseinrichtung",
+    SozialeEinrichtung = "Soziale Einrichtung",
+    Wohnraumnutzung = "Wohnraumnutzung",
+    SportNutzung = "SportNutzung",
+    ErfordertLicht = "Erfordert Licht",
+    ErfordertKeinLicht = "Erfordert kein Licht",
+    Infrastruktur = "Infrastruktur",
+    IndustrieUndHandel = "Industrie und Handel",
+    
 }
