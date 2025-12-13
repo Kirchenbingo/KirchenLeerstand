@@ -210,7 +210,28 @@
 <br>
 <br>
 <h2>Mögliche Nutzungen</h2>
-  @for (utilization of utilizations; track $index) {
+<h3>Hauptnutzung</h3>
+  @for (utilization of utilizationsMain; track $index) {
+  <p>
+    @if (utilization.strike) {
+      <s>{{ utilization.label }}</s>
+    } @else {
+      <span>{{ utilization.label + " " + utilization.prio}}</span>
+    }
+  </p> 
+}
+<h3>Nebennutzung</h3>
+  @for (utilization of utilizationsSecondary; track $index) {
+  <p>
+    @if (utilization.strike) {
+      <s>{{ utilization.label }}</s>
+    } @else {
+      <span>{{ utilization.label + " " + utilization.prio}}</span>
+    }
+  </p> 
+}
+<h3>Haupt- und Nebennutzung</h3>
+  @for (utilization of utilizationsBoth; track $index) {
   <p>
     @if (utilization.strike) {
       <s>{{ utilization.label }}</s>
