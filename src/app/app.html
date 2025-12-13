@@ -210,7 +210,7 @@
 <br>
 <br>
 <h2>Mögliche Nutzungen</h2>
-<h3>Hauptnutzung</h3>
+@if(utilizationsMain.length>0) { <h3>Hauptnutzung</h3> }
   @for (utilization of utilizationsMain; track $index) {
   <p>
     @if (utilization.strike) {
@@ -220,8 +220,8 @@
     }
   </p> 
 }
-<h3>Nebennutzung</h3>
-  @for (utilization of utilizationsSecondary; track $index) {
+@if(utilizationsSecondary.length>0) { <h3>Nebennutzung</h3> }
+@for (utilization of utilizationsSecondary; track $index) {
   <p>
     @if (utilization.strike) {
       <s>{{ utilization.label }}</s>
@@ -230,7 +230,7 @@
     }
   </p> 
 }
-<h3>Haupt- und Nebennutzung</h3>
+@if(utilizationsBoth.length>0) { <h3>Haupt- und Nebennutzung</h3> }
   @for (utilization of utilizationsBoth; track $index) {
   <p>
     @if (utilization.strike) {
