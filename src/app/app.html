@@ -209,36 +209,60 @@
     <!-- <button type="button" [disabled]="!statistik.valid" (click)="calcUtilizations()">Berechne Nutzungen</button> -->
     <button type="button" class="btn btn-secondary btn-lg" (click)="calcUtilizations()">Berechne Nutzungen</button>
   </form>
-
-
   <br>
-  <br>
-  @if(utilizationsMain.length>0) { 
-    <h2>Mögliche Nutzungen</h2>
-    <h3>Hauptnutzung</h3> 
-  }
-  @for (utilization of utilizationsMain; track $index) {
-  <p>
-    @if (utilization.strike) {
-    <s>{{ utilization.label }}</s>
-    } @else {
-    <span class="badge bg-success">{{utilization.prio}}</span> <span> {{ utilization.label}} </span>
-    }
 
-    @if(utilization.secondaryLabel != undefined) {
-    ({{utilization.secondaryLabel}})
-    }
-  </p>
-  }
-  @if(utilizationsSecondary.length>0 && showSecondaryUtilization) { <h3>Nebennutzung</h3>
-    @for (utilization of utilizationsSecondary; track $index) {
-      <p>
-        @if (utilization.strike) {
-        <s>{{ utilization.label }}</s>
-        } @else {
-        <span class="badge bg-success">{{utilization.prio}}</span> <span> {{ utilization.label}} </span>
+
+  @if (utilizationsMain.length > 0) {
+  <h2 class="mt-4">Mögliche Nutzungen</h2>
+  <br>
+
+  <div class="row g-3">
+    <!-- Hauptnutzung -->
+    <div class="col-md-6">
+      <div class="card p-3 h-100">
+        <h3>Hauptnutzung</h3>
+
+        @for (utilization of utilizationsMain; track $index) {
+        <p class="mb-1">
+          @if (utilization.strike) {
+          <s>{{ utilization.label }}</s>
+          } @else {
+          <span class="badge bg-secondary me-2">
+            {{ utilization.prio }}
+          </span>
+          <span>{{ utilization.label }}</span>
+          }
+
+          @if (utilization.secondaryLabel) {
+          <span class="text-muted">
+            (mit Nebennutzung {{ utilization.secondaryLabel }})
+          </span>
+          }
+        </p>
         }
-      </p>
+      </div>
+    </div>
+
+    <!-- Nebennutzung -->
+    @if (utilizationsSecondary.length > 0 && showSecondaryUtilization) {
+    <div class="col-md-6">
+      <div class="card p-3 h-100">
+        <h3>Nebennutzung</h3>
+
+        @for (utilization of utilizationsSecondary; track $index) {
+        <p class="mb-1">
+          @if (utilization.strike) {
+          <s>{{ utilization.label }}</s>
+          } @else {
+          <span class="badge bg-secondary me-2 ">
+            {{ utilization.prio }}
+          </span>
+          <span>{{ utilization.label }}</span>
+          }
+        </p>
+        }
+      </div>
+    </div>
     }
+  </div>
   }
-</div>

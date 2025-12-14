@@ -30,9 +30,70 @@ interface Utilization {
 const tagsForTurnhalle = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.SportNutzung, Tags.Mehrgeschossig, Tags.Rentabel, Tags.ErfordertKeinLicht, Tags.KonstantesPublikum, Tags.ZielgruppeKinder];
 const tagsForKletterhalle = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.SportNutzung, Tags.ErfordertKeinLicht, Tags.ZielgruppeKinder, Tags.ZielgruppeJungeErwachsene, Tags.Mehrgeschossig, Tags.Rentabel, Tags.PublikumsMagnet, Tags.Konsumfrei];
 const tagsForHallenbad = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.SportNutzung, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet, Tags.ZielgruppeKinder, Tags.ZielgruppeSenioren];
-
-
-
+const tagsForIndoorSpielplatz = [Tags.Innenraum, Tags.ZielgruppeKinder, Tags.Rentabel, Tags.ErfordertKeinLicht, Tags.PublikumsMagnet, Tags.Mehrgeschossig];
+const tagsForTanzschule = [Tags.Innenraum, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.Rentabel, Tags.KonstantesPublikum, Tags.SportNutzung, Tags.KulturelleEinrichtung, Tags.ZielgruppeKinder, Tags.ZielgruppeJungeErwachsene];
+const tagsForMusikschule = [Tags.Innenraum, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.Rentabel, Tags.KonstantesPublikum, Tags.Bildungseinrichtung, Tags.KulturelleEinrichtung, Tags.ZielgruppeKinder, Tags.ZielgruppeJungeErwachsene];
+const tagsForAtelier = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KulturelleEinrichtung, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei];
+const tagsForRepaircafe = [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei];
+const tagsForSozialcafe = [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei];
+const tagsForJugendtreff = [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeKinder, Tags.Konsumfrei];
+const tagsForSozialhotel = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum];
+const tagsForASZ = [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.ZielgruppeSenioren, Tags.Konsumfrei];
+const tagsForGemeindezentrum = [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet, Tags.Konsumfrei];
+const tagsForSozialkaufhaus = [Tags.Innenraum, Tags.SozialeEinrichtung, Tags.ErfordertKeinLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.Rentabel, Tags.KonstantesPublikum];
+const tagsForVereinszentrum = [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei];
+const tagsForLernUndLeseort = [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.Bildungseinrichtung, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei, Tags.ZielgruppeKinder, Tags.ZielgruppeJungeErwachsene];
+const tagsForBibliothek = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.PublikumsMagnet, Tags.ZielgruppeKinder, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeSenioren];
+const tagsForNachbarschaftsrestaurant = [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Rentabel, Tags.PublikumsMagnet];
+const tagsForVeranstaltungssraum = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.Rentabel, Tags.PublikumsMagnet];
+const tagsForCoWorkingSpace = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KonstantesPublikum];
+const tagsForOffenReligioesesZentrum = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertLicht, Tags.Mehrgeschossig, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet, Tags.Konsumfrei];
+const tagsForStadtpark = [Tags.Aussenraum, Tags.RepraesentativQuartier, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet, Tags.Konsumfrei];
+const tagsForGemeinschaftsgarten = [Tags.Aussenraum, Tags.RepraesentativQuartier, Tags.KonstantesPublikum, Tags.Konsumfrei];
+const tagsForSpielplatz = [Tags.Aussenraum, Tags.RepraesentativQuartier, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet, Tags.Konsumfrei, Tags.ZielgruppeKinder];
+const tagsForMarktplatz = [Tags.Aussenraum, Tags.RepraesentativQuartier, Tags.Rentabel, Tags.PublikumsMagnet];
+const tagsFürFreibad = [Tags.Aussenraum, Tags.RepraesentativStadt, Tags.SportNutzung, Tags.Finanzierungsbedarf, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeKinder, Tags.PublikumsMagnet];
+const tagsForSportplatz = [Tags.Aussenraum, Tags.nichtRepraesentativ, Tags.SportNutzung, Tags.KonstantesPublikum, Tags.Konsumfrei, Tags.ZielgruppeKinder, Tags.ZielgruppeJungeErwachsene];
+const tagsForTennisplatz = [Tags.Aussenraum, Tags.nichtRepraesentativ, Tags.SportNutzung, Tags.KonstantesPublikum, Tags.Rentabel];
+const tagsForWohnenFrauenAlleinerziehende = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Finanzierungsbedarf, Tags.ZielgruppeKinder, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar];
+const tagsForWohnenJugendliche = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Finanzierungsbedarf, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeKinder, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar];
+const tagsForBetreutesWohnen = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Finanzierungsbedarf, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar];
+const tagsForCoHousing = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.Rentabel, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar];
+const tagsForWohnungslosenunterkunft = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Finanzierungsbedarf, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar];
+const tagsForGefluechtetenunterkunft = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Finanzierungsbedarf, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeKinder, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar];
+const tagsForMehrgenerationenwohnen = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.Rentabel, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeSenioren, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar];
+const tagsForGemeinschaftlichesAlterswohen = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Rentabel, Tags.ZielgruppeSenioren, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar];
+const tagsForKita = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ZielgruppeKinder, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.KonstantesPublikum];
+const tagsForOGS = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ZielgruppeKinder, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.KonstantesPublikum];
+const tagsForUnigebaeude = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.ZielgruppeJungeErwachsene, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KonstantesPublikum];
+const tagsForVerwaltungsgebeaude = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.Infrastruktur, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.PublikumsMagnet];
+const tagsForErweiterungSchule = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ZielgruppeKinder, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KonstantesPublikum];
+const tagsForErweiterungAltenheim = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ZielgruppeSenioren, Tags.Wohnraumnutzung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KonstantesPublikum];
+const tagsForVHS = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KonstantesPublikum];
+const tagsForTheater = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.Rentabel, Tags.PublikumsMagnet];
+const tagsForKonzertsaal = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.Rentabel, Tags.PublikumsMagnet];
+const tagsForClub = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.ZielgruppeJungeErwachsene, Tags.KulturelleEinrichtung, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.Rentabel, Tags.PublikumsMagnet];
+const tagsForAusstellungsraum = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertLicht, Tags.Mehrgeschossig, Tags.Eingeschossig, Tags.Stapelbar, Tags.Rentabel, Tags.PublikumsMagnet];
+const tagsForKolumbarium = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei, Tags.ZielgruppeSenioren];
+const tagsForTafel = [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertKeinLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei];
+const tagsForStudiUndAzubiWohnheim = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.Finanzierungsbedarf, Tags.ZielgruppeJungeErwachsene, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar];
+const tagsForGesundheitskiosk = [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei];
+const tagsForEissportfläche = [Tags.RepraesentativStadt, Tags.SportNutzung, Tags.ErfordertKeinLicht, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet];
+const tagsForAmphitheater = [Tags.Aussenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.Rentabel, Tags.PublikumsMagnet];
+const tagsForRecyclingZentrum = [Tags.nichtRepraesentativ, Tags.Infrastruktur, Tags.Rentabel, Tags.Mehrgeschossig, Tags.KonstantesPublikum];
+const tagsForHandwerkshof = [Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.Rentabel, Tags.Mehrgeschossig, Tags.KonstantesPublikum];
+const tagsForProduktionshalle = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertKeinLicht, Tags.KeinPublikum];
+const tagsForGrossmarkthalle = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertKeinLicht, Tags.KonstantesPublikum];
+const tagsForLagerhalle = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertKeinLicht, Tags.KeinPublikum];
+const tagsForBaumarkt = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertKeinLicht, Tags.PublikumsMagnet];
+const tagsForGartencenter = [Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertLicht, Tags.PublikumsMagnet];
+const tagsForMoebelhaus = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertKeinLicht, Tags.PublikumsMagnet];
+const tagsForRechenzentrum = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Infrastruktur, Tags.CashCow, Tags.ErfordertKeinLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KeinPublikum];
+const tagsForStorageSpace = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Infrastruktur, Tags.CashCow, Tags.ErfordertKeinLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KeinPublikum];
+const tagsForHeizkraftwerk = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Infrastruktur, Tags.CashCow, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.KeinPublikum];
+const tagsForWaermepumpe = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Infrastruktur, Tags.CashCow, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.KeinPublikum];
+const tagsForBatteriespeicher = [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Infrastruktur, Tags.CashCow, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.KeinPublikum];
+const tagsForMobilityHub = [Tags.Innenraum, Tags.RepraesentativStadt, Tags.Infrastruktur, Tags.Rentabel, Tags.ErfordertKeinLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.PublikumsMagnet];
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
@@ -74,73 +135,73 @@ export class App {
 
   intializeUtilizationArray(this: any){
     this.utilizations = [];
-    this.utilizations.push({type: Types.main, tags: tagsForTurnhalle, prio: 0, strike: false, label: Utilizations.Turnhalle});
-    this.utilizations.push({type: Types.main, tags: tagsForKletterhalle, prio: 0, strike: false, label: Utilizations.Kletterhalle});
+    this.utilizations.push({type: Types.both, tags: tagsForTurnhalle, prio: 0, strike: false, label: Utilizations.Turnhalle, secondaryLabel: Utilizations.Umkleide});
+    this.utilizations.push({type: Types.both, tags: tagsForKletterhalle, prio: 0, strike: false, label: Utilizations.Kletterhalle, secondaryLabel: Utilizations.Umkleide});
     this.utilizations.push({type: Types.both, tags: tagsForHallenbad, prio: 0, strike: false, label: Utilizations.Hallenbad, secondaryLabel: Utilizations.Umkleide});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.ZielgruppeKinder, Tags.Rentabel, Tags.ErfordertKeinLicht, Tags.PublikumsMagnet, Tags.Mehrgeschossig], prio: 0, strike: false, label: Utilizations.IndoorSpielplatz});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.Rentabel, Tags.KonstantesPublikum, Tags.SportNutzung, Tags.KulturelleEinrichtung, Tags.ZielgruppeKinder, Tags.ZielgruppeJungeErwachsene], prio: 0, strike: false, label: Utilizations.Tanzschule});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.Rentabel, Tags.KonstantesPublikum, Tags.Bildungseinrichtung, Tags.KulturelleEinrichtung, Tags.ZielgruppeKinder, Tags.ZielgruppeJungeErwachsene], prio: 0, strike: false, label: Utilizations.Musikschule});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KulturelleEinrichtung, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.AtelierUndKreativraum});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.Repaircafe});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.Sozialcafe});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeKinder, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.Jugendtreff});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.Sozialhotel});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.ZielgruppeSenioren, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.AltenServiceZentrum});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.Gemeindezentrum});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.SozialeEinrichtung, Tags.ErfordertKeinLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.Rentabel, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.Sozialkaufhaus});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.Vereinszentrum});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.Bildungseinrichtung, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei, Tags.ZielgruppeKinder, Tags.ZielgruppeJungeErwachsene], prio: 0, strike: false, label: Utilizations.LernUndLeseOrt});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.PublikumsMagnet, Tags.ZielgruppeKinder, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeSenioren], prio: 0, strike: false, label: Utilizations.Bibliothek});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Rentabel, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Nachbarschaftsrestaurant});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.Rentabel, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Veranstaltungsraum});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.CoWorkingSpace});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertLicht, Tags.Mehrgeschossig, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.OffenesReligioesesZentrum});
-    this.utilizations.push({type: Types.main, tags: [Tags.Aussenraum, Tags.RepraesentativQuartier, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.Stadtpark});
-    this.utilizations.push({type: Types.main, tags: [Tags.Aussenraum, Tags.RepraesentativQuartier, Tags.KonstantesPublikum, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.Gemeinschaftsgarten});
-    this.utilizations.push({type: Types.main, tags: [Tags.Aussenraum, Tags.RepraesentativQuartier, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet, Tags.Konsumfrei, Tags.ZielgruppeKinder], prio: 0, strike: false, label: Utilizations.Spielplatz});
-    this.utilizations.push({type: Types.main, tags: [Tags.Aussenraum, Tags.RepraesentativQuartier, Tags.Rentabel, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Marktplatz});
-    this.utilizations.push({type: Types.main, tags: [Tags.Aussenraum, Tags.RepraesentativStadt, Tags.SportNutzung, Tags.Finanzierungsbedarf, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeKinder, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Freibad});
-    this.utilizations.push({type: Types.main, tags: [Tags.Aussenraum, Tags.nichtRepraesentativ, Tags.SportNutzung, Tags.KonstantesPublikum, Tags.Konsumfrei, Tags.ZielgruppeKinder, Tags.ZielgruppeJungeErwachsene], prio: 0, strike: false, label: Utilizations.Sportplatz});
-    this.utilizations.push({type: Types.main, tags: [Tags.Aussenraum, Tags.nichtRepraesentativ, Tags.SportNutzung, Tags.KonstantesPublikum, Tags.Rentabel], prio: 0, strike: false, label: Utilizations.Tennisplatz});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Finanzierungsbedarf, Tags.ZielgruppeKinder, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar ], prio: 0, strike: false, label: Utilizations.WohngruppeFrauenUndAlleinerziehend});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Finanzierungsbedarf, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeKinder, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar ], prio: 0, strike: false, label: Utilizations.WohngruppeJugendliche});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Finanzierungsbedarf, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar ], prio: 0, strike: false, label: Utilizations.BetreutesWohnen});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.Rentabel, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar ], prio: 0, strike: false, label: Utilizations.CoHousingProjekt});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Finanzierungsbedarf, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar ], prio: 0, strike: false, label: Utilizations.Wohnungslosenunterkunft});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Finanzierungsbedarf, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeKinder, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar ], prio: 0, strike: false, label: Utilizations.Gefluechtetenunterkunft});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.Rentabel, Tags.ZielgruppeJungeErwachsene, Tags.ZielgruppeSenioren, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar], prio: 0, strike: false, label: Utilizations.Mehrgenerationenwohnen});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.SozialeEinrichtung, Tags.Rentabel, Tags.ZielgruppeSenioren, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar], prio: 0, strike: false, label: Utilizations.GemeinschaftlichesAlterswohnen});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ZielgruppeKinder, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.Kita});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ZielgruppeKinder, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.OffenesGanztagsAngebot});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.ZielgruppeJungeErwachsene, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.Universitaetsgebaeude});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.Infrastruktur, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Verwaltungsgebaeude});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ZielgruppeKinder, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.ErweiterungsbauSchule});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.ZielgruppeSenioren, Tags.Wohnraumnutzung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.ErweiterungsbauAltenheim});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.Bildungseinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.Volkshochschule});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.Rentabel, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Theater});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.Rentabel, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Konzertsaal});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.ZielgruppeJungeErwachsene, Tags.KulturelleEinrichtung, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.Rentabel, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Club});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertLicht, Tags.Mehrgeschossig, Tags.Eingeschossig, Tags.Stapelbar, Tags.Rentabel, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Ausstellungsraum});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei, Tags.ZielgruppeSenioren], prio: 0, strike: false, label: Utilizations.Kolumbarium});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertKeinLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.Tafel});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Wohnraumnutzung, Tags.Finanzierungsbedarf, Tags.ZielgruppeJungeErwachsene, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Stapelbar ], prio: 0, strike: false, label: Utilizations.StudierendenUndAzubiWohnheim});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.RepraesentativQuartier, Tags.SozialeEinrichtung, Tags.ErfordertLicht, Tags.Eingeschossig, Tags.Finanzierungsbedarf, Tags.KonstantesPublikum, Tags.Konsumfrei], prio: 0, strike: false, label: Utilizations.Gesundheitskiosk});
-    this.utilizations.push({type: Types.main, tags: [Tags.RepraesentativStadt, Tags.SportNutzung, Tags.ErfordertKeinLicht, Tags.Finanzierungsbedarf, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Eissportfläche});
-    this.utilizations.push({type: Types.main, tags: [Tags.Aussenraum, Tags.RepraesentativStadt, Tags.KulturelleEinrichtung, Tags.Rentabel, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Amphitheater});
-    this.utilizations.push({type: Types.main, tags: [Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.Infrastruktur, Tags.Rentabel, Tags.Mehrgeschossig, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.RecyclingZentrum});
-    this.utilizations.push({type: Types.main, tags: [Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.Rentabel, Tags.Mehrgeschossig, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.Handwerkshof});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertKeinLicht, Tags.KeinPublikum], prio: 0, strike: false, label: Utilizations.Produktionshalle});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertKeinLicht, Tags.KonstantesPublikum], prio: 0, strike: false, label: Utilizations.Grossmarkthalle});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertKeinLicht, Tags.KeinPublikum], prio: 0, strike: false, label: Utilizations.Lagerhalle});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertKeinLicht, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Baumarkt});
-    this.utilizations.push({type: Types.main, tags: [Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertLicht, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Gartencenter});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.IndustrieUndHandel, Tags.CashCow, Tags.Mehrgeschossig, Tags.ErfordertKeinLicht, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.Moebelhaus});
-    this.utilizations.push({type: Types.main, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Infrastruktur, Tags.CashCow, Tags.ErfordertKeinLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KeinPublikum], prio: 0, strike: false, label: Utilizations.Rechenzentrum});
-    this.utilizations.push({type: Types.secondary, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Infrastruktur, Tags.CashCow, Tags.ErfordertKeinLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.KeinPublikum], prio: 0, strike: false, label: Utilizations.StorageSpace});
-    this.utilizations.push({type: Types.secondary, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Infrastruktur, Tags.CashCow, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.KeinPublikum], prio: 0, strike: false, label: Utilizations.BlockHeizkraftwerk});
-    this.utilizations.push({type: Types.both, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Infrastruktur, Tags.CashCow, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.KeinPublikum], prio: 0, strike: false, label: Utilizations.Waermepumpenstandort});
-    this.utilizations.push({type: Types.both, tags: [Tags.Innenraum, Tags.nichtRepraesentativ, Tags.Infrastruktur, Tags.CashCow, Tags.ErfordertKeinLicht, Tags.Mehrgeschossig, Tags.KeinPublikum], prio: 0, strike: false, label: Utilizations.Batteriespeicher});
-    this.utilizations.push({type: Types.both, tags: [Tags.Innenraum, Tags.RepraesentativStadt, Tags.Infrastruktur, Tags.Rentabel, Tags.ErfordertKeinLicht, Tags.Eingeschossig, Tags.Stapelbar, Tags.PublikumsMagnet], prio: 0, strike: false, label: Utilizations.MobilityHub});
+    this.utilizations.push({type: Types.main, tags: tagsForIndoorSpielplatz, prio: 0, strike: false, label: Utilizations.IndoorSpielplatz});
+    this.utilizations.push({type: Types.main, tags: tagsForTanzschule, prio: 0, strike: false, label: Utilizations.Tanzschule});
+    this.utilizations.push({type: Types.main, tags: tagsForMusikschule, prio: 0, strike: false, label: Utilizations.Musikschule});
+    this.utilizations.push({type: Types.secondary, tags: tagsForAtelier, prio: 0, strike: false, label: Utilizations.AtelierUndKreativraum});
+    this.utilizations.push({type: Types.secondary, tags: tagsForRepaircafe, prio: 0, strike: false, label: Utilizations.Repaircafe});
+    this.utilizations.push({type: Types.secondary, tags: tagsForSozialcafe, prio: 0, strike: false, label: Utilizations.Sozialcafe});
+    this.utilizations.push({type: Types.secondary, tags: tagsForJugendtreff, prio: 0, strike: false, label: Utilizations.Jugendtreff});
+    this.utilizations.push({type: Types.main, tags: tagsForSozialhotel, prio: 0, strike: false, label: Utilizations.Sozialhotel});
+    this.utilizations.push({type: Types.secondary, tags: tagsForASZ, prio: 0, strike: false, label: Utilizations.AltenServiceZentrum});
+    this.utilizations.push({type: Types.main, tags: tagsForGemeindezentrum, prio: 0, strike: false, label: Utilizations.Gemeindezentrum});
+    this.utilizations.push({type: Types.main, tags: tagsForSozialkaufhaus, prio: 0, strike: false, label: Utilizations.Sozialkaufhaus});
+    this.utilizations.push({type: Types.secondary, tags: tagsForVereinszentrum, prio: 0, strike: false, label: Utilizations.Vereinszentrum});
+    this.utilizations.push({type: Types.secondary, tags: tagsForLernUndLeseort, prio: 0, strike: false, label: Utilizations.LernUndLeseOrt});
+    this.utilizations.push({type: Types.main, tags: tagsForBibliothek, prio: 0, strike: false, label: Utilizations.Bibliothek});
+    this.utilizations.push({type: Types.secondary, tags: tagsForNachbarschaftsrestaurant, prio: 0, strike: false, label: Utilizations.Nachbarschaftsrestaurant});
+    this.utilizations.push({type: Types.main, tags: tagsForVeranstaltungssraum, prio: 0, strike: false, label: Utilizations.Veranstaltungsraum});
+    this.utilizations.push({type: Types.secondary, tags: tagsForCoWorkingSpace, prio: 0, strike: false, label: Utilizations.CoWorkingSpace});
+    this.utilizations.push({type: Types.main, tags: tagsForOffenReligioesesZentrum, prio: 0, strike: false, label: Utilizations.OffenesReligioesesZentrum});
+    this.utilizations.push({type: Types.main, tags: tagsForStadtpark, prio: 0, strike: false, label: Utilizations.Stadtpark});
+    this.utilizations.push({type: Types.secondary, tags: tagsForGemeinschaftsgarten, prio: 0, strike: false, label: Utilizations.Gemeinschaftsgarten});
+    this.utilizations.push({type: Types.secondary, tags: tagsForSpielplatz, prio: 0, strike: false, label: Utilizations.Spielplatz});
+    this.utilizations.push({type: Types.main, tags: tagsForMarktplatz, prio: 0, strike: false, label: Utilizations.Marktplatz});
+    this.utilizations.push({type: Types.both, tags: tagsFürFreibad, prio: 0, strike: false, label: Utilizations.Freibad, secondaryLabel: Utilizations.Umkleide});
+    this.utilizations.push({type: Types.both, tags: tagsForSportplatz, prio: 0, strike: false, label: Utilizations.Sportplatz, secondaryLabel: Utilizations.Umkleide});
+    this.utilizations.push({type: Types.both, tags: tagsForTennisplatz, prio: 0, strike: false, label: Utilizations.Tennisplatz, secondaryLabel: Utilizations.Umkleide});
+    this.utilizations.push({type: Types.main, tags: tagsForWohnenFrauenAlleinerziehende, prio: 0, strike: false, label: Utilizations.WohngruppeFrauenUndAlleinerziehend});
+    this.utilizations.push({type: Types.main, tags: tagsForWohnenJugendliche, prio: 0, strike: false, label: Utilizations.WohngruppeJugendliche});
+    this.utilizations.push({type: Types.main, tags: tagsForBetreutesWohnen, prio: 0, strike: false, label: Utilizations.BetreutesWohnen});
+    this.utilizations.push({type: Types.main, tags: tagsForCoHousing, prio: 0, strike: false, label: Utilizations.CoHousingProjekt});
+    this.utilizations.push({type: Types.main, tags: tagsForWohnungslosenunterkunft, prio: 0, strike: false, label: Utilizations.Wohnungslosenunterkunft});
+    this.utilizations.push({type: Types.main, tags: tagsForGefluechtetenunterkunft, prio: 0, strike: false, label: Utilizations.Gefluechtetenunterkunft});
+    this.utilizations.push({type: Types.main, tags: tagsForMehrgenerationenwohnen, prio: 0, strike: false, label: Utilizations.Mehrgenerationenwohnen});
+    this.utilizations.push({type: Types.main, tags: tagsForGemeinschaftlichesAlterswohen, prio: 0, strike: false, label: Utilizations.GemeinschaftlichesAlterswohnen});
+    this.utilizations.push({type: Types.secondary, tags: tagsForKita, prio: 0, strike: false, label: Utilizations.Kita});
+    this.utilizations.push({type: Types.secondary, tags: tagsForOGS, prio: 0, strike: false, label: Utilizations.OffenesGanztagsAngebot});
+    this.utilizations.push({type: Types.main, tags: tagsForUnigebaeude, prio: 0, strike: false, label: Utilizations.Universitaetsgebaeude});
+    this.utilizations.push({type: Types.main, tags: tagsForVerwaltungsgebeaude, prio: 0, strike: false, label: Utilizations.Verwaltungsgebaeude});
+    this.utilizations.push({type: Types.main, tags: tagsForErweiterungSchule, prio: 0, strike: false, label: Utilizations.ErweiterungsbauSchule});
+    this.utilizations.push({type: Types.main, tags: tagsForErweiterungAltenheim, prio: 0, strike: false, label: Utilizations.ErweiterungsbauAltenheim});
+    this.utilizations.push({type: Types.main, tags: tagsForVHS, prio: 0, strike: false, label: Utilizations.Volkshochschule});
+    this.utilizations.push({type: Types.both, tags: tagsForTheater, prio: 0, strike: false, label: Utilizations.Theater, secondaryLabel: Utilizations.Backstage});
+    this.utilizations.push({type: Types.both, tags: tagsForKonzertsaal, prio: 0, strike: false, label: Utilizations.Konzertsaal, secondaryLabel: Utilizations.Backstage});
+    this.utilizations.push({type: Types.main, tags: tagsForClub, prio: 0, strike: false, label: Utilizations.Club});
+    this.utilizations.push({type: Types.main, tags: tagsForAusstellungsraum, prio: 0, strike: false, label: Utilizations.Ausstellungsraum});
+    this.utilizations.push({type: Types.main, tags: tagsForKolumbarium, prio: 0, strike: false, label: Utilizations.Kolumbarium});
+    this.utilizations.push({type: Types.secondary, tags: tagsForTafel, prio: 0, strike: false, label: Utilizations.Tafel});
+    this.utilizations.push({type: Types.main, tags: tagsForStudiUndAzubiWohnheim, prio: 0, strike: false, label: Utilizations.StudierendenUndAzubiWohnheim});
+    this.utilizations.push({type: Types.secondary, tags: tagsForGesundheitskiosk, prio: 0, strike: false, label: Utilizations.Gesundheitskiosk});
+    this.utilizations.push({type: Types.main, tags: tagsForEissportfläche, prio: 0, strike: false, label: Utilizations.Eissportfläche, secondaryLabel: Utilizations.Umkleide});
+    this.utilizations.push({type: Types.main, tags: tagsForAmphitheater, prio: 0, strike: false, label: Utilizations.Amphitheater});
+    this.utilizations.push({type: Types.main, tags: tagsForRecyclingZentrum, prio: 0, strike: false, label: Utilizations.RecyclingZentrum});
+    this.utilizations.push({type: Types.main, tags: tagsForHandwerkshof, prio: 0, strike: false, label: Utilizations.Handwerkshof});
+    this.utilizations.push({type: Types.main, tags: tagsForProduktionshalle, prio: 0, strike: false, label: Utilizations.Produktionshalle});
+    this.utilizations.push({type: Types.main, tags: tagsForGrossmarkthalle, prio: 0, strike: false, label: Utilizations.Grossmarkthalle});
+    this.utilizations.push({type: Types.main, tags: tagsForLagerhalle, prio: 0, strike: false, label: Utilizations.Lagerhalle});
+    this.utilizations.push({type: Types.main, tags: tagsForBaumarkt, prio: 0, strike: false, label: Utilizations.Baumarkt});
+    this.utilizations.push({type: Types.main, tags: tagsForGartencenter, prio: 0, strike: false, label: Utilizations.Gartencenter});
+    this.utilizations.push({type: Types.main, tags: tagsForMoebelhaus, prio: 0, strike: false, label: Utilizations.Moebelhaus});
+    this.utilizations.push({type: Types.main, tags: tagsForRechenzentrum, prio: 0, strike: false, label: Utilizations.Rechenzentrum});
+    this.utilizations.push({type: Types.main, tags: tagsForStorageSpace, prio: 0, strike: false, label: Utilizations.StorageSpace});
+    this.utilizations.push({type: Types.main, tags: tagsForHeizkraftwerk, prio: 0, strike: false, label: Utilizations.BlockHeizkraftwerk});
+    this.utilizations.push({type: Types.both, tags: tagsForWaermepumpe, prio: 0, strike: false, label: Utilizations.Waermepumpenstandort});
+    this.utilizations.push({type: Types.both, tags: tagsForBatteriespeicher, prio: 0, strike: false, label: Utilizations.Batteriespeicher});
+    this.utilizations.push({type: Types.both, tags: tagsForMobilityHub, prio: 0, strike: false, label: Utilizations.MobilityHub});
   }
 
   calcUtilizations(){
@@ -411,17 +472,22 @@ export class App {
     switch ( selection ) {
       case "Basilika":
         this.showSecondaryUtilization = true;
-        //and so on
+        this.changePrioOfTag(Tags.Eingeschossig, 1);
+        this.changePrioOfTag(Tags.ErfordertLicht, 1);
+        this.changePrioOfTag(Tags.Mehrgeschossig, 1);
         break;
 
       case "Hallenkirche":
-        this.showSecondaryUtilization = true;        
-        //and so on
+        this.showSecondaryUtilization = true;
+        this.changePrioOfTag(Tags.Stapelbar, 1);      
+        this.changePrioOfTag(Tags.ErfordertKeinLicht, 1);            
+        this.changePrioOfTag(Tags.Mehrgeschossig, 1);      
         break;
 
       case "Saalkirche":        
         this.showSecondaryUtilization = false;
-        //and so on
+        this.changePrioOfTag(Tags.Mehrgeschossig, 1);
+        this.changePrioOfTag(Tags.Stapelbar, 1);
         break;
     }
  }
@@ -432,10 +498,11 @@ export class App {
     } 
     switch ( selection ) {
       case "Ja":
-        this.changePrioOfTag(Tags.RepraesentativStadt, 1)
-        this.changePrioOfTag(Tags.RepraesentativQuartier, 1)
-        this.changePrioOfTag(Tags.PublikumsMagnet, 1)
-        this.changePrioOfTag(Tags.SozialeEinrichtung, 1)
+        this.changePrioOfTag(Tags.RepraesentativStadt, 1);
+        this.changePrioOfTag(Tags.RepraesentativQuartier, 1);
+        this.changePrioOfTag(Tags.PublikumsMagnet, 1);
+        this.changePrioOfTag(Tags.SozialeEinrichtung, 1);
+        this.changePrioOfTag(Tags.KulturelleEinrichtung, 1);
 
         this.strikeTag(Tags.KeinPublikum);
         this.strikeTag(Tags.IndustrieUndHandel);
@@ -450,21 +517,19 @@ export class App {
         break;
 
       case "JaAussen":  
-        this.changePrioOfTag(Tags.RepraesentativStadt, 1)
-        this.changePrioOfTag(Tags.RepraesentativQuartier, 1)
-        this.changePrioOfTag(Tags.PublikumsMagnet, 1)   
-        this.changePrioOfTag(Tags.SozialeEinrichtung, 1)   
+        this.changePrioOfTag(Tags.RepraesentativStadt, 1);
+        this.changePrioOfTag(Tags.RepraesentativQuartier, 1);
+        this.changePrioOfTag(Tags.PublikumsMagnet, 1);   
+        this.changePrioOfTag(Tags.SozialeEinrichtung, 1);   
+        this.changePrioOfTag(Tags.KulturelleEinrichtung, 1);   
 
-        this.changePrioOfTag(Tags.KeinPublikum, -1)     
-
-        //and so on
+        this.changePrioOfTag(Tags.KeinPublikum, -1);     
+        this.changePrioOfTag(Tags.nichtRepraesentativ, -1);     
         break;
 
       case "Nein": 
-        this.changePrioOfTag(Tags.CashCow, 1)       
-        this.changePrioOfTag(Tags.Rentabel, 1)       
-  
-        //and so on
+        this.changePrioOfTag(Tags.CashCow, 1);       
+        this.changePrioOfTag(Tags.Rentabel, 1);       
         break;
     }
   }
@@ -477,17 +542,14 @@ export class App {
     switch ( selection ) {
       case "Gut":
         this.strikeTag(Tags.Aussenraum);
-        //and so on
         break;
 
       case "Schlecht":        
         this.changePrioOfTag(Tags.Aussenraum, 1);
-        //and so on
         break;
 
       case "SehrSchlecht":
         this.strikeTag(Tags.Innenraum);
-      //and so on
         break;
     }
   }
@@ -535,7 +597,10 @@ export class App {
   }
 
   processDemographicQuotients(){
-    //this.changePrioOfTag(Tags.ErfordertLicht, 1000);
+    this.changePrioOfTag(Tags.Infrastruktur, 1);
+    this.changePrioOfTag(Tags.IndustrieUndHandel, 1);
+    this.changePrioOfTag(Tags.Rentabel, 1);
+    this.changePrioOfTag(Tags.CashCow, 1);
   }
 
   processArmutsquotient(quotient: string | null | undefined ){
@@ -547,6 +612,12 @@ export class App {
       this.changePrioOfTag(Tags.SozialeEinrichtung, 1);
       this.changePrioOfTag(Tags.Konsumfrei, 1);
       this.changePrioOfTag(Tags.Bildungseinrichtung, 1);
+    }
+    else {
+      this.changePrioOfTag(Tags.Infrastruktur, 1);
+      this.changePrioOfTag(Tags.IndustrieUndHandel, 1);
+      this.changePrioOfTag(Tags.Rentabel, 1);
+      this.changePrioOfTag(Tags.CashCow, 1);
     }
   }
 
@@ -561,7 +632,10 @@ export class App {
       this.changePrioOfTag(Tags.PublikumsMagnet, 1);
     }
     else {
-      //this.changePrioOfTag(Tags.SozialeEinrichtung, 500);
+      this.changePrioOfTag(Tags.Infrastruktur, 1);
+      this.changePrioOfTag(Tags.IndustrieUndHandel, 1);
+      this.changePrioOfTag(Tags.Rentabel, 1);
+      this.changePrioOfTag(Tags.CashCow, 1);
     }
   }
 
@@ -573,6 +647,12 @@ export class App {
     if(quotientNumber >= 40){
       this.changePrioOfUtilization(Utilizations.Gefluechtetenunterkunft, 1);
       this.changePrioOfTag(Tags.SozialeEinrichtung, 1)
+    }
+    else {
+      this.changePrioOfTag(Tags.Infrastruktur, 1);
+      this.changePrioOfTag(Tags.IndustrieUndHandel, 1);
+      this.changePrioOfTag(Tags.Rentabel, 1);
+      this.changePrioOfTag(Tags.CashCow, 1);
     }
   }
   
