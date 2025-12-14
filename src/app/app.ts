@@ -674,7 +674,8 @@ export class App {
       strike: this.utilizations[this.findUsageIndex(searchLabel)].strike,
       label: this.utilizations[this.findUsageIndex(searchLabel)].label,
       tags: this.utilizations[this.findUsageIndex(searchLabel)].tags,
-      type: this.utilizations[this.findUsageIndex(searchLabel)].type
+      type: this.utilizations[this.findUsageIndex(searchLabel)].type,
+      secondaryLabel: this.utilizations[this.findUsageIndex(searchLabel)].secondaryLabel
     }
   }
 
@@ -684,7 +685,8 @@ export class App {
       strike: true,
       label: this.utilizations[this.findUsageIndex(searchLabel)].label,
       tags: this.utilizations[this.findUsageIndex(searchLabel)].tags,
-      type: this.utilizations[this.findUsageIndex(searchLabel)].type
+      type: this.utilizations[this.findUsageIndex(searchLabel)].type,
+      secondaryLabel: this.utilizations[this.findUsageIndex(searchLabel)].secondaryLabel
     }
   }
 
